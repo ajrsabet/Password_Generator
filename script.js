@@ -1,4 +1,3 @@
-
 //DON'T TOUCH THIS CODE! This code is adding click handlers and DOM manipulation to the page.  Edit the generatePassword function and all should work properly.
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -41,7 +40,6 @@ generateBtn.addEventListener("click", writePassword);
 
 //  create array of uppercase letters
 var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-// var upperCase = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 
 // for (let i = 0; i < upperCase.length; i++) {
 //     console.log (upperCase[i]); 
@@ -56,7 +54,6 @@ var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
 
 //  create array of numbers 0-9
 var numbers = '0123456789';
-// var numbers = ("0","1","2","3","4","5","6","7","8","9");
 
 // for (let i = 0; i < numbers.length; i++) {
 //     console.log (numbers[i]); 
@@ -68,7 +65,11 @@ var symbols = '~`!@#$%^&*()_-+={[}]|:;<>.?/",';
 // for (let i = 0; i < symbols.length; i++) {
 //     console.log (symbols[i]); 
 // }
-userCharList = [];
+var userCharList = [];
+var passLowerCase = false;
+var passUpperCase = false;
+var passSpecial = false;
+var passNum = false;
 // console.log(userCharList)
 
 // ask user password length between 8 and 128
@@ -80,40 +81,52 @@ while (passLength < 8) {
 
 console.log(passLength);
 
-while (userCharList = []) {
+
+while (passLowerCase === false &&
+        passUpperCase === false &&
+        passSpecial === false &&
+        passNum === false) {
+
+            // ask user uppercase letters
+            var passLowerCase = confirm("Would you like to use lowercase letters?");
+if (passLowerCase === true) {
+    for (let i = 0; i < lowerCase.length; i++) {
+        userCharList.push(lowerCase[i])
+    }
     
-    // ask user uppercase letters
-    var passLowerCase = confirm("Would you like to use lowercase letters?");
-    if (passLowerCase === true) {
-        for (let i = 0; i < lowerCase.length; i++) {
-            userCharList.push (lowerCase [i])
-        }
-        
-    }
-    // ask user uppercase letters
-    var passUpperCase = confirm("Would you like to use uppercase letters?");
-    if (passUpperCase === true) {
-        for (let i = 0; i < upperCase.length; i++) {
-            userCharList.push (upperCase [i]) 
-        }
-    }
-    // ask user numbers
-    var passNum = confirm("Would you like to use numbers?");
-    if (passNum === true) {
-        for (let i = 0; i < numbers.length; i++) {
-            userCharList.push (numbers [i]) 
-        }
-    }
-    // ask user special characters
-    var passSpecial = confirm("Would you like to use special characters?");
-    if (passSpecial === true) {
-        for (let i = 0; i < symbols.length; i++) {
-            userCharList.push (symbols [i]) 
-        }
+}
+// ask user uppercase letters
+var passUpperCase = confirm("Would you like to use uppercase letters?");
+if (passUpperCase === true) {
+    for (let i = 0; i < upperCase.length; i++) {
+        userCharList.push(upperCase[i])
     }
 }
+// ask user numbers
+var passNum = confirm("Would you like to use numbers?");
+if (passNum === true) {
+    for (let i = 0; i < numbers.length; i++) {
+        userCharList.push(numbers[i])
+    }
+}
+// ask user special characters
+var passSpecial = confirm("Would you like to use special characters?");
+if (passSpecial === true) {
+    for (let i = 0; i < symbols.length; i++) {
+        userCharList.push(symbols[i])
+    }
+}
+if (passLowerCase === false &&
+    passUpperCase === false &&
+    passNum === false &&
+    passSpecial === false) {
+    alert("You need to make a selection. Please choose at least one character category.")    
+}
+}
 
-console.log (userCharList)
+
+
+console.log(userCharList)
 
 // state the perameters set by the user
 // console.log("Password perameters: " + passLength + ", " + passUpperCase + ", " + passNum + ", " + passSpecial)
