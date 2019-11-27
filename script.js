@@ -69,38 +69,48 @@ var symbols = '~`!@#$%^&*()_-+={[}]|:;<>.?/",';
 //     console.log (symbols[i]); 
 // }
 userCharList = [];
-// ask user how long of a password is needed
-var passLength = prompt("How long would you like the password?");
+// console.log(userCharList)
 
-// ask user uppercase letters
-var passLowerCase = confirm("Would you like to use lowercase letters?");
-if (passLowerCase === true) {
-    for (let i = 0; i < lowerCase.length; i++) {
-        userCharList.push (lowerCase [i])
+// ask user password length between 8 and 128
+var passLength = prompt("Choose password length with value of 8 to 128");
+
+while (passLength < 8) {
+    var passLength = prompt("Try again bucko, I said 8 to 128");
+}
+
+console.log(passLength);
+
+while (userCharList = []) {
+    
+    // ask user uppercase letters
+    var passLowerCase = confirm("Would you like to use lowercase letters?");
+    if (passLowerCase === true) {
+        for (let i = 0; i < lowerCase.length; i++) {
+            userCharList.push (lowerCase [i])
+        }
         
     }
-     
-}
-// ask user uppercase letters
-var passUpperCase = confirm("Would you like to use uppercase letters?");
-if (passUpperCase === true) {
-    for (let i = 0; i < upperCase.length; i++) {
-    userCharList.push (upperCase [i]) 
-}
-}
-// ask user numbers
-var passNum = confirm("Would you like to use numbers?");
-if (passNum === true) {
-    for (let i = 0; i < numbers.length; i++) {
-    userCharList.push (numbers [i]) 
-}
-}
-// ask user special characters
-var passSpecial = confirm("Would you like to use special characters?");
-if (passSpecial === true) {
-    for (let i = 0; i < symbols.length; i++) {
-    userCharList.push (symbols [i]) 
-}
+    // ask user uppercase letters
+    var passUpperCase = confirm("Would you like to use uppercase letters?");
+    if (passUpperCase === true) {
+        for (let i = 0; i < upperCase.length; i++) {
+            userCharList.push (upperCase [i]) 
+        }
+    }
+    // ask user numbers
+    var passNum = confirm("Would you like to use numbers?");
+    if (passNum === true) {
+        for (let i = 0; i < numbers.length; i++) {
+            userCharList.push (numbers [i]) 
+        }
+    }
+    // ask user special characters
+    var passSpecial = confirm("Would you like to use special characters?");
+    if (passSpecial === true) {
+        for (let i = 0; i < symbols.length; i++) {
+            userCharList.push (symbols [i]) 
+        }
+    }
 }
 
 console.log (userCharList)
