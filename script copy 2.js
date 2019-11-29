@@ -6,40 +6,25 @@ var copyBtn = document.querySelector("#copy");
 //this function will fire when you click the generate password button on the page.  I've set it to alert "You've clicked a button" and return a password of password for now. Update it to make your password
 function generatePassword() {
     //YOUR CODE HERE
-    
+
     //  create arrays of character types
     var upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var lowerCase = 'abcdefghijklmnopqrstuvwxyz';
     var numbers = '0123456789';
     var symbols = '~`!@#$%^&*()_-+={[}]|:;<>.?/",';
-    
-    
+
+
     // Set variables used in while loop
     var userCharList = [];
     var passLength = 0;
-    var passLengthStr = 0;
     var passLowerCase = false;
     var passUpperCase = false;
     var passSpecial = false;
     var passNum = false;
-    
+
     var passwordArray = [];
 
-
-    // Retrieve form input from index.html
-       var passLengthStr = document.getElementById("#passLength");
-       var passLength = passLengthStr.valueOf();
-       var passLowerCase = document.getElementById("#passLowerCase");
-       var passUpperCase = document.getElementById("#passUpperCase");
-       var passNum = document.getElementById("#passNum");
-       var passSpecial = document.getElementById("#passSpecial");
-    console.log("passLength: " + passLength.valueOf()); 
-    console.log("userCharList: " + userCharList);
-    console.log("passLowerCase: " + passLowerCase);
-    console.log("passUpperCase: " + passUpperCase);
-    console.log("passSpecial: " + passSpecial);
-    console.log("passNum: " + passNum);
-
+    // while (
 
     while (passLength < 8 ||
         passLength > 128) {
@@ -87,6 +72,19 @@ function generatePassword() {
         console.log(passSpecial);
     }
 
+    // Retrieve form input from index.html
+    //    var passLength = document.getElementById("#passLength");
+    //    var passLowerCase = document.getElementById("#passLowerCase");
+    //    var passUpperCase = document.getElementById("#passUpperCase");
+    //    var passNum = document.getElementById("#passNum");
+    //    var passSpecial = document.getElementById("#passSpecial");
+    // console.log("passLength: " + passLength.valueOf()); 
+    // console.log("userCharList: " + userCharList);
+    // console.log("passLowerCase: " + passLowerCase);
+    // console.log("passUpperCase: " + passUpperCase);
+    // console.log("passSpecial: " + passSpecial);
+    // console.log("passNum: " + passNum);
+    // user choose character types to be used in the 
 
     for (let i = 0; i < passLength.valueOf(-1); i++) {
         passwordArray.push(userCharList[Math.floor(Math.random() * userCharList.length)]);
