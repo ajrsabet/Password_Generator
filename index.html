@@ -17,36 +17,40 @@
     <h1>Password Generator</h1>
   </header>
   <h2>Generate a Password</h2>
-  
-  <!-- <form>
+
+  <form>
     <div class="form-group">
-      <label for="pass Length">Password Length</label>
-      <input type="number" class="form-control" id="passLength" placeholder="from 8 to 128">
+      <label for="checkLength">Password Length</label>
+      <input type="text" class="form-control" id="checkLength" placeholder="from 8 to 128">
     </div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="passLowerCase" value="true">
-      <label class="form-check-label" for="exampleCheck1">Lowercase Letters</label>
+      <input type="checkbox" class="form-check-input" id="checkLowerCase" > 
+      <label class="form-check-label" for="checkLowerCase">Lowercase Letters</label>
     </div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="passUpperCase" value="true">
-      <label class="form-check-label" for="exampleCheck1">Uppercase Letters</label>
+      <input type="checkbox" class="form-check-input" id="checkUpperCase" >
+      <label class="form-check-label" for="checkUpperCase">Uppercase Letters</label>
     </div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="passNum" value="true">
-      <label class="form-check-label" for="exampleCheck1">Numbers</label>
+      <input type="checkbox" class="form-check-input" id="checkNum" >
+      <label class="form-check-label" for="checkNum">Numbers</label>
     </div>
     <div class="form-check">
-      <input type="checkbox" class="form-check-input" id="passSpecial" value="true">
-      <label class="form-check-label" for="exampleCheck1">Special Characters</label>
+      <input type="checkbox" class="form-check-input" id="checkSpecial" >
+      <label class="form-check-label" for="checkSpecial">Special Characters</label>
     </div>
-    </form> -->
+    </form>
 
-    <button id="generate">Generate Password</button>
-    <button id="copy">Copy to Clipboard</button>
+  <button id="generate">Generate Password</button>
+  <br>
+  </br>
+  <button id="copy">Copy to Clipboard</button>
+  <br>
+  </br>
   <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-  
 
-  
+
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
