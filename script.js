@@ -18,10 +18,11 @@ function generatePassword() {
     var userCharList = [];
     var passwordArray = [];
     var passLength = 0;
-    var passLowerCase = false;
-    var passUpperCase = false;
-    var passSpecial = false;
-    var passNum = false;
+    var password = "";
+    // var passLowerCase = false;
+    // var passUpperCase = false;
+    // var passSpecial = false;
+    // var passNum = false;
 
 
     // Retrieve form input from index.html
@@ -30,21 +31,13 @@ function generatePassword() {
     var passUpperCase = document.getElementById("checkUpperCase").checked;
     var passNum = document.getElementById("checkNum").checked;
     var passSpecial = document.getElementById("checkSpecial").checked;
-    console.log("passLength: " + passLength);
-    console.log("passLowerCase: " + passLowerCase);
-    console.log("passUpperCase: " + passUpperCase);
-    console.log("passSpecial: " + passSpecial);
-    console.log("passNum: " + passNum);
+
     // user choose character types to be used in the 
-
-
-
     if (passLength < 8 ||
         passLength > 128) {
 
         // ask user password length between 8 and 128
         alert("Choose password length with value of 8 to 128");
-        console.log(passLength);
     }
 
     else if (passLowerCase === false &&
@@ -60,7 +53,6 @@ function generatePassword() {
                 userCharList.push(lowerCase[i])
             }
         }
-        console.log(passLowerCase);
         // ask user uppercase letters
         // var passUpperCase = confirm("Would you like to use uppercase letters?");
         if (passUpperCase === true) {
@@ -68,7 +60,7 @@ function generatePassword() {
                 userCharList.push(upperCase[i])
             }
         }
-        console.log(passUpperCase);
+
         // ask user numbers
         // var passNum = confirm("Would you like to use numbers?");
         if (passNum === true) {
@@ -76,7 +68,7 @@ function generatePassword() {
                 userCharList.push(numbers[i])
             }
         }
-        console.log(passNum);
+
         // ask user special characters
         // var passSpecial = confirm("Would you like to use special characters?");
         if (passSpecial === true) {
@@ -84,16 +76,13 @@ function generatePassword() {
                 userCharList.push(symbols[i])
             }
         }
-        console.log(passSpecial);
-    
-    console.log("userCharList: " + userCharList);
+
     for (let i = 0; i < passLength.valueOf(-1); i++) {
         passwordArray.push(userCharList[Math.floor(Math.random() * userCharList.length)]);
     }
-    console.log(passwordArray);
+
 
     var password = passwordArray.join("");
-    console.log(password);
     return password;
     }
 }
@@ -114,17 +103,15 @@ function writePassword() {
 
 function copyToClipboard() {
     // BONUS 
-    const copyToClipboard = str => {
-        const el = document.createElement('password');
-        el.value = str;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-      };
+    var copyText = document.getElementById("password");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999)
+    document.execCommand("copy");
+    alert("Copied the text: " + password.value);
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
 // BONUS EVENT LISTENER
+copyBtn.addEventListener("click", copyToClipboard);
