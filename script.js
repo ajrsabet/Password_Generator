@@ -19,10 +19,7 @@ function generatePassword() {
     var passwordArray = [];
     var passLength = 0;
     var password = "";
-    // var passLowerCase = false;
-    // var passUpperCase = false;
-    // var passSpecial = false;
-    // var passNum = false;
+    
 
 
     // Retrieve form input from index.html
