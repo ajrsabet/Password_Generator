@@ -1,3 +1,11 @@
 button{
     width: 200px;
 }
+
+body {
+    background-image: url("./Assets/password-generator.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: black;
+
+}
