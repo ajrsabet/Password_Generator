@@ -1,4 +1,6 @@
 # Homework_03_JS_Password_Gen
+Deployed link:
+ https://ajrsabet.github.io/Password_Generator/
 
 This application is a random password generator using JavaScript. 
 It will generate a random password based on user-selected criteria. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code.
